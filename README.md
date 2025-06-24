@@ -35,16 +35,17 @@ The dataset contains 10,000 records with the following features:
 - **Correlation Heatmap:** Weak-to-moderate correlations between numeric features.
 
  Models Built
-
 🔹 Logistic Regression
-- Interpretable linear model.
-- Achieved ROC AUC ~ 0.85–0.9.
-- Key features: income, expiry_month, profession.
+- AUC: ~0.5152 → very poor
+- Weak predictive signal in linear space
+- Not suitable for production in current form
 
 🔹 Random Forest
 - Handles non-linear relationships and feature interactions.
 - Improved performance over logistic regression.
 - Visualized feature importance using Gini impurity.
+- AUC: Significantly better than logistic (~0.7+)
+- Captures non-linear interactions
 
  Evaluation Metrics
 
