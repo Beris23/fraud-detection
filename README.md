@@ -46,6 +46,7 @@ The dataset contains 10,000 records with the following features:
 - Visualized feature importance using Gini impurity.
 - AUC: Significantly better than logistic (~0.7+)
 - Captures non-linear interactions
+- Preferred model for deployment
 
  Evaluation Metrics
 
