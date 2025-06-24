@@ -77,12 +77,12 @@ coef_df %>%
 
 library(randomForest)
 rf_model <- randomForest(fraud ~ profession + income + security_code + expiry_month + expiry_year,
-                         data = train, ntree = 600, importance = TRUE)
+                         data = train, ntree = 5000, importance = TRUE)
 
 rf_preds <- predict(rf_model, newdata = test, type = "prob")[,2]
 rf_class <- ifelse(rf_preds > 0.5, 1, 0) %>% as.factor()
 
-conf_matrix <- table(Predicted = rf_preds, Actual = test$fraud)
+conf_matrix <- table(Predicted = rf_class, Actual = test$fraud)
 
 rf_roc <- roc(test$fraud, rf_preds)
 plot(rf_roc, main = "ROC Curve - Random Forest", col = "darkgreen")
